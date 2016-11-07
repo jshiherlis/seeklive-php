@@ -1,0 +1,25 @@
+{
+  "name": "seeklive",
+  "description": "PHP SDK for Seeklive.io",
+  "keywords": ["seeklive.io", "seeklive", "php seeklive", "php seeklive.io"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Julien Reynaud",
+      "email": "julien.reynaud75@gmail.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "6.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Seeklive":"src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 namespace Seeklive;
 
-class Api {
+class SeekliveClient {
 
     public function __construct($apiKey)
     {
@@ -23,5 +23,10 @@ class Api {
     public function updateParticipant($token, $attributes)
     {
         return $this->request->updateParticipant($token, $attributes);
+    }
+
+    public function deleteParticipant($token)
+    {
+        return $this->request->deleteParticipant($token);
     }
 }

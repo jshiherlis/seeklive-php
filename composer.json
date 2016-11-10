@@ -10,11 +10,12 @@
     }
   ],
   "require": {
+    "php": ">=5.5.0",
     "guzzlehttp/guzzle": "6.*"
   },
   "autoload": {
     "psr-0": {
-      "Seeklive":"src/"
+      "Seeklive\\": ["src"]
     }
   },
   "extra": {

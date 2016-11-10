@@ -1,5 +1,5 @@
 {
-  "name": "seeklive",
+  "name": "seeklive-sdk",
   "description": "PHP SDK for Seeklive.io",
   "keywords": ["seeklive.io", "seeklive", "php seeklive", "php seeklive.io"],
   "license": "MIT",

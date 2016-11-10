@@ -26,7 +26,7 @@ class Request {
         }
 
         $this->client = new \GuzzleHttp\Client([
-            'base_uri' => 'http://localhost:8080',
+            'base_uri' => 'https://seekliveapi.seekube.net',
             'headers' => [
                 'Authorization' => $auth
             ]

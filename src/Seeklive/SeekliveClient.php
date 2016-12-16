@@ -15,7 +15,7 @@ class SeekliveClient {
         return $this->request->createConference($attributes);
     }
     
-    public function updateParticipant($conferenceId, $attributes)
+    public function updateConference($conferenceId, $attributes)
     {
         return $this->request->updateParticipant($conferenceId, $attributes);
     }

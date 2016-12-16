@@ -14,6 +14,11 @@ class SeekliveClient {
     {
         return $this->request->createConference($attributes);
     }
+    
+    public function updateParticipant($conferenceId, $attributes)
+    {
+        return $this->request->updateParticipant($conferenceId, $attributes);
+    }
 
     public function createParticipant($conferenceId, $attributes)
     {

@@ -52,6 +52,27 @@ class Request {
 
         return new Response($response->getStatusCode(), $response->getBody()->getContents());
     }
+    
+    /**
+     * Send Update conference Request
+     * @param $id
+     * @param $attributes
+     * @return Response
+     */
+    public function updateConference($id, $attributes)
+    {
+        try {
+            $response = $this->client->patch('/conferences/' . $id, array(
+                'json' => $attributes,
+            ));
+        } catch (BadResponseException $e) {
+            $response = $e->getResponse();
+        } catch (RequestException $e) {
+            return new Response($e->getCode(), $e->getMessage());
+        }
+
+        return new Response($response->getStatusCode(), $response->getBody()->getContents());
+    }
 
     /**
      * Send Create Participant Request
@@ -77,7 +98,7 @@ class Request {
     }
 
     /**
-     * Send Create Participant Request
+     * Send Update Participant Request
      * @param $token
      * @param $attributes
      * @return Response
@@ -105,9 +126,7 @@ class Request {
     public function deleteParticipant($token)
     {
         try {
-            $response = $this->client->delete('/participants/' . $token, array(
-                'auth' => $this->auth,
-            ));
+            $response = $this->client->delete('/participants/' . $token);
         } catch (BadResponseException $e) {
             $response = $e->getResponse();
         } catch (RequestException $e) {

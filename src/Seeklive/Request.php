@@ -18,7 +18,7 @@ class Request {
      * Bootlegness for testing
      * @param null $client
      */
-    public function __construct($auth, $client=null)
+    public function __construct($auth, $apiUrl, $client=null)
     {
         if (!is_null($client)) {
             $this->client = $client;
@@ -26,7 +26,7 @@ class Request {
         }
 
         $this->client = new \GuzzleHttp\Client([
-            'base_uri' => 'https://seekliveapi.seekube.net',
+            'base_uri' => $apiUrl,
             'headers' => [
                 'Authorization' => $auth
             ]

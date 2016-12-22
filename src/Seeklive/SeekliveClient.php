@@ -4,11 +4,24 @@ namespace Seeklive;
 
 class SeekliveClient {
 
+	const appUrl = 'https://app.seeklive.io';
+	const apiUrl = 'https://seekliveapi.seekube.net';
+
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->request = new Request($apiKey);
+        $this->request = new Request($apiKey, self::apiUrl);
     }
+
+    public static function getAppUrl()
+    {
+	    return self::appUrl;
+    }
+
+	public static function getApiUrl()
+	{
+		return self::apiUrl;
+	}
 
     public function createConference($attributes)
     {

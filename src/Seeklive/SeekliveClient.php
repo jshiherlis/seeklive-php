@@ -32,6 +32,11 @@ class SeekliveClient {
     {
         return $this->request->updateParticipant($conferenceId, $attributes);
     }
+	
+    public function getAllParticipants($conferenceId)
+    {
+        return $this->request->getAllParticipants($conferenceId);
+    }
 
     public function createParticipant($conferenceId, $attributes)
     {

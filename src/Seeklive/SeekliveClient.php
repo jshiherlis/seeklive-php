@@ -47,4 +47,9 @@ class SeekliveClient {
     {
         return $this->request->deleteParticipant($token);
     }
+
+    public function getConferenceParticipants($conferenceId)
+    {
+        return $this->request->getConferenceParticipants($conferenceId);
+    }
 }

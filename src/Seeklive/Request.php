@@ -135,4 +135,22 @@ class Request {
 
         return new Response($response->getStatusCode(), $response->getReasonPhrase());
     }
+
+    /**
+     * Send Get Conference Participants Request
+     * @param $conferenceId
+     * @return Response
+     */
+    public function getConferenceParticipants($conferenceId)
+    {
+        try {
+            $response = $this->client->get('/participants?conference=' . $conferenceId);
+        } catch (BadResponseException $e) {
+            $response = $e->getResponse();
+        } catch (RequestException $e) {
+            return new Response($e->getCode(), $e->getMessage());
+        }
+
+        return new Response($response->getStatusCode(), $response->getBody()->getContents());
+    }
 }

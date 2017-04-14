@@ -5,7 +5,7 @@ namespace Seeklive;
 class SeekliveClient {
 
 	const appUrl = 'https://app.seeklive.io';
-	const apiUrl = 'https://api.seeklive.io';
+	const apiUrl = 'https://dev.api.seeklive.io';
 
     public function __construct($apiKey)
     {
